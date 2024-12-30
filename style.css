@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: blanchedalmond;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 80vh;
+  width: 80vw;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
