@@ -1,23 +1,25 @@
 let oldGrid = document.querySelector(".container");
 
-for (let i = 1; i <= 16; i++) {
-  const row = document.createElement("div");
-  row.style.display = "flex";
-  oldGrid.appendChild(row);
+const gridSize = 16;
 
-  for (let j = 1; j <= 16; j++) {
+function createFirstGrid(container, size) {
+  const squareSize = 100 / size;
+
+  for (let i = 1; i <= size * size; i++) {
     const gridSquare = document.createElement("div");
     gridSquare.style.backgroundColor = "white";
     gridSquare.style.border = "1px solid black";
-    gridSquare.style.height = "5vh";
-    gridSquare.style.width = "5vw";
-    row.appendChild(gridSquare);
+    gridSquare.style.flex = `0 0 ${squareSize}%`;
+    gridSquare.style.height = "auto";
+    container.appendChild(gridSquare);
 
     gridSquare.addEventListener("mouseover", function () {
       gridSquare.style.backgroundColor = "red";
     });
   }
 }
+
+createFirstGrid(oldGrid, gridSize);
 
 const button = document.querySelector("button");
 const body = document.querySelector("body");
