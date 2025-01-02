@@ -11,13 +11,17 @@ function createFirstGrid(container, size) {
     gridSquare.style.border = "1px solid black";
     gridSquare.style.flex = `0 0 ${squareSize}%`;
     gridSquare.style.height = "auto";
+    gridSquare.opacity = 1;
     container.appendChild(gridSquare);
 
     gridSquare.addEventListener("mouseover", function () {
       const red = Math.floor(Math.random() * 255);
       const green = Math.floor(Math.random() * 255);
       const blue = Math.floor(Math.random() * 255);
-      gridSquare.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+
+      gridSquare.opacity = Math.max(gridSquare.opacity - 0.1, 0);
+
+      gridSquare.style.backgroundColor = `rgb(${red}, ${green}, ${blue}, ${gridSquare.opacity})`;
     });
   }
 }
@@ -48,13 +52,17 @@ function generateGrid(number, newGrid) {
     gridSquare.style.flex = `0 0 ${squareSize}%`;
     gridSquare.style.height = "auto";
     gridSquare.style.backgroundColor = "white";
+    gridSquare.opacity = 1;
     newGrid.appendChild(gridSquare);
 
     gridSquare.addEventListener("mouseover", function () {
       const red = Math.floor(Math.random() * 255);
       const green = Math.floor(Math.random() * 255);
       const blue = Math.floor(Math.random() * 255);
-      gridSquare.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+
+      gridSquare.opacity = Math.max(gridSquare.opacity - 0.1, 0);
+
+      gridSquare.style.backgroundColor = `rgb(${red}, ${green}, ${blue}, ${gridSquare.opacity})`;
     });
   }
 }
