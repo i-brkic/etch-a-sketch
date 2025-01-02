@@ -14,7 +14,10 @@ function createFirstGrid(container, size) {
     container.appendChild(gridSquare);
 
     gridSquare.addEventListener("mouseover", function () {
-      gridSquare.style.backgroundColor = "red";
+      const red = Math.floor(Math.random() * 255);
+      const green = Math.floor(Math.random() * 255);
+      const blue = Math.floor(Math.random() * 255);
+      gridSquare.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
     });
   }
 }
@@ -48,7 +51,10 @@ function generateGrid(number, newGrid) {
     newGrid.appendChild(gridSquare);
 
     gridSquare.addEventListener("mouseover", function () {
-      gridSquare.style.backgroundColor = "red";
+      const red = Math.floor(Math.random() * 255);
+      const green = Math.floor(Math.random() * 255);
+      const blue = Math.floor(Math.random() * 255);
+      gridSquare.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
     });
   }
 }
